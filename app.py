@@ -44,7 +44,7 @@ with col3:
 
 # 4. Prediction Logic
 if st.button("Predict Genre", type="primary", use_container_width=True):
-    # Order must match X_train columns exactly
+    
     feature_names = ['popularity', 'acousticness', 'danceability', 'duration_ms', 'energy', 'instrumentalness', 'key', 'liveness', 'loudness', 'mode', 'speechiness', 'tempo', 'valence']
     
     input_df = pd.DataFrame([[
@@ -57,7 +57,7 @@ if st.button("Predict Genre", type="primary", use_container_width=True):
     input_scaled = scaler.transform(input_df)
     prediction_numeric = model.predict(input_scaled)[0]
     
-    # --- YOUR UPDATED GENRE MAP ---
+    # --- GENRE MAP ---
     genre_map = {
         0: "Electronic",
         1: "Anime",
